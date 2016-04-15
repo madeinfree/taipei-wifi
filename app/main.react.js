@@ -1,16 +1,8 @@
-import React, { Component } from 'react';
-import ReactDom, { render } from 'react-dom';
+import React from 'react';
+import { render } from 'react-dom';
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
+const main = (
+  <div>Hello World!</div>
+);
 
-  render() {
-    return (
-      <div>Hello Taipei Wifi.</div>
-    );
-  }
-};
-
-render(<Main />, document.getElementById('app'));
+render(main, document.getElementById('app'));

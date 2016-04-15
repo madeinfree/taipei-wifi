@@ -10,7 +10,19 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
+  debug: true,
+  devtool: 'eval-source-map',
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: [ /node_modules/ ],
+        loader: 'eslint'
+      }
+    ],
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
