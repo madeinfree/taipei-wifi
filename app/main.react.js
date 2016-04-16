@@ -1,8 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-const main = (
-  <div>Hello World!</div>
-);
+import App from './components/common/app.react';
+import Header from './components/common/header.react';
 
-render(main, document.getElementById('app'));
+function Main() {
+  return (
+    <div>
+      <Header />
+      <App />
+    </div>
+  );
+}
+
+render(<Main />, document.getElementById('app'));
