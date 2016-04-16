@@ -1,14 +1,21 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
-function App() {
-  return (
-    <div>
-      <Router history={ browserHistory }>
-        <Route path='/' />
-      </Router>
-    </div>
-  );
-}
+import Common from './common.react';
+import About from '../about/index.react';
+import Search from '../search/index.react';
 
-export default App;
+export default class App extends React.Component {
+  static defaultProps = {}
+
+  render() {
+    return (
+      <Router history={ browserHistory }>
+        <Route path='/' component={ Common }>
+          <Route path='search' component={ Search } />
+          <Route path='about' component={ About } />
+        </Route>
+      </Router>
+    );
+  }
+}
